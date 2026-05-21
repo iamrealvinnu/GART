@@ -151,7 +151,7 @@ const WelcomeLoader = ({ onFinished }: { onFinished: () => void }) => {
           transition={{ duration: 1 }}
           className="absolute bottom-16 text-[12px] font-black uppercase tracking-[0.6em] text-home-maroon"
         >
-          Made by GDI Nexus
+          Made by GDI Nexus Software Solutions
         </motion.div>
       )}
 

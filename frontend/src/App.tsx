@@ -173,7 +173,7 @@ function AppContent() {
               </div>
               <div className="max-w-7xl mx-auto px-6 mt-16 md:mt-20 pt-8 md:pt-10 border-t border-white/5 text-center text-[8px] md:text-[10px] text-white/20 font-bold tracking-[0.3em] uppercase">
                 © 2026 Dishana's Kitchen. Pure Homemade Joy. <br className="md:hidden" />
-                <span className="md:ml-4 text-home-saffron/80 font-bold tracking-widest">Made by GDI Nexus</span>
+                <span className="md:ml-4 text-home-saffron/80 font-bold tracking-widest">Made by GDI Nexus Software Solutions</span>
               </div>
             </footer>
           )}

@@ -2,6 +2,8 @@
 
 This document outlines the technical structure and tech stack used in the Dishana's Kitchen web application.
 
+Developed by **GDI Nexus Software Solutions**.
+
 ## Tech Stack
 
 - **Framework**: React 19
