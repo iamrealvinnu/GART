@@ -1,0 +1,57 @@
+:root {
+  /* Color Palette */
+  --saffron: #F4C430;
+  --turmeric: #FFC30B;
+  --clay: #B35C44;
+  --henna-red: #8B0000;
+  --earth-brown: #3E2723;
+  --cream-white: #FFFDD0;
+  --warm-beige: #F5F5DC;
+  
+  /* Text Colors */
+  --text-dark: #2C1810;
+  --text-light: #FDF5E6;
+  
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 4rem;
+  
+  /* Transitions */
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif; /* Fallback */
+  background-color: var(--cream-white);
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif; /* Artisanal/Traditional look */
+  color: var(--henna-red);
+}
+
+.natural-button {
+  background-color: var(--clay);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  font-weight: 600;
+}
+
+.natural-button:hover {
+  background-color: var(--henna-red);
+  transform: translateY(-2px);
+}
