@@ -87,7 +87,7 @@ const WelcomeLoader = ({ onFinished }: { onFinished: () => void }) => {
             transition={{ duration: 2, ease: "easeOut" }}
             className="relative flex flex-col items-center"
           >
-            <div className="relative w-80 h-80 flex items-center justify-center">
+            <div className="relative w-64 sm:w-80 h-64 sm:h-80 flex items-center justify-center">
               {[...Array(6)].map((_, i) => (
                 <motion.div
                   key={i}
@@ -105,12 +105,12 @@ const WelcomeLoader = ({ onFinished }: { onFinished: () => void }) => {
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 transition={{ delay: 1, duration: 1.5, type: "spring", stiffness: 60 }}
-                className="relative z-10 p-4 bg-white rounded-full shadow-2xl terracotta-border"
+                className="relative z-10 p-3 sm:p-4 bg-white rounded-full shadow-2xl terracotta-border"
               >
                 <img 
                   src={logo} 
                   alt="Logo" 
-                  className="w-44 h-44 rounded-full object-cover border-4 border-home-saffron/50"
+                  className="w-32 sm:w-44 h-32 sm:h-44 rounded-full object-cover border-4 border-home-saffron/50"
                 />
               </motion.div>
             </div>
@@ -122,7 +122,7 @@ const WelcomeLoader = ({ onFinished }: { onFinished: () => void }) => {
                 transition={{ duration: 1.2, ease: "easeOut" }}
                 className="mt-16 text-center"
               >
-                <h1 className="text-6xl md:text-8xl font-serif text-home-maroon tracking-tight drop-shadow-sm">
+                <h1 className="text-5xl sm:text-6xl md:text-8xl font-serif text-home-maroon tracking-tight drop-shadow-sm">
                   Dishana's <span className="text-home-terracotta italic font-normal">Kitchen</span>
                 </h1>
                 <motion.div

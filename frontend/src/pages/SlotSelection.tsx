@@ -28,13 +28,13 @@ const SlotSelection = () => {
           >
              <Sparkles className="text-home-terracotta w-8 h-8 animate-pulse" />
           </motion.div>
-          <h1 className="text-6xl md:text-8xl font-serif text-home-maroon mb-6">Pick Your <span className="text-home-terracotta italic">Time</span></h1>
-          <p className="text-xl text-home-clay font-light max-w-2xl mx-auto italic leading-relaxed">
+          <h1 className="text-5xl sm:text-6xl md:text-8xl font-serif text-home-maroon mb-6">Pick Your <span className="text-home-terracotta italic">Time</span></h1>
+          <p className="text-lg sm:text-xl text-home-clay font-light max-w-2xl mx-auto italic leading-relaxed">
             "Everything is made fresh. Choose a time when you can enjoy it best."
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-10">
           {slots.map((slot, i) => {
             const isFull = slot.booked >= slot.capacity;
             const isSelected = selectedSlot === slot.id;
@@ -46,43 +46,43 @@ const SlotSelection = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 }}
                 onClick={() => !isFull && setSelectedSlot(slot.id)}
-                className={`group relative p-12 rounded-[4rem] border-2 transition-all cursor-pointer overflow-hidden
+                className={`group relative p-8 sm:p-12 rounded-[2.5rem] sm:rounded-[4rem] border-2 transition-all cursor-pointer overflow-hidden
                   ${isFull ? 'opacity-40 grayscale cursor-not-allowed border-gray-100 bg-gray-50' : 'soft-shadow hover:scale-[1.02]'}
                   ${isSelected ? 'bg-home-sandstone border-home-terracotta' : 'bg-white border-home-terracotta/10'}
                 `}
               >
                 <div className="relative z-10">
-                  <div className="flex justify-between items-start mb-10">
-                    <div className={`px-6 py-2 rounded-full text-[10px] font-black uppercase tracking-widest
+                  <div className="flex justify-between items-start mb-6 sm:mb-10">
+                    <div className={`px-4 sm:px-6 py-1.5 sm:py-2 rounded-full text-[8px] sm:text-[10px] font-black uppercase tracking-widest
                       ${slot.type === 'Delivery' ? 'bg-home-terracotta text-white' : 'bg-home-leaf text-white'}
                     `}>
                       {slot.type}
                     </div>
                     {isFull ? (
-                      <div className="flex items-center gap-2 text-home-maroon font-bold text-[10px] uppercase tracking-widest">
-                        <AlertCircle className="w-4 h-4" /> Full
+                      <div className="flex items-center gap-2 text-home-maroon font-bold text-[8px] sm:text-[10px] uppercase tracking-widest">
+                        <AlertCircle className="w-3 h-3 sm:w-4 sm:h-4" /> Full
                       </div>
                     ) : (
-                      <div className="text-home-clay/40 text-[10px] font-bold uppercase tracking-widest">
+                      <div className="text-home-clay/40 text-[8px] sm:text-[10px] font-bold uppercase tracking-widest">
                         {slot.capacity - slot.booked} spots left
                       </div>
                     )}
                   </div>
 
-                  <h3 className="text-4xl font-serif text-home-maroon mb-3">{slot.date}</h3>
-                  <div className="flex items-center gap-4 text-home-clay/60 mb-10">
-                    <Clock className="w-5 h-5 text-home-terracotta" />
-                    <span className="font-medium text-lg">{slot.time}</span>
+                  <h3 className="text-3xl sm:text-4xl font-serif text-home-maroon mb-2 sm:mb-3">{slot.date}</h3>
+                  <div className="flex items-center gap-3 sm:gap-4 text-home-clay/60 mb-8 sm:mb-10">
+                    <Clock className="w-4 h-4 sm:w-5 sm:h-5 text-home-terracotta" />
+                    <span className="font-medium text-base sm:text-lg">{slot.time}</span>
                   </div>
 
                   {isSelected && (
                     <motion.div 
                       initial={{ scale: 0 }}
                       animate={{ scale: 1 }}
-                      className="absolute bottom-12 right-12"
+                      className="absolute bottom-8 sm:bottom-12 right-8 sm:right-12"
                     >
-                       <div className="bg-home-terracotta p-4 rounded-full soft-shadow">
-                          <CheckCircle2 className="w-8 h-8 text-white" />
+                       <div className="bg-home-terracotta p-3 sm:p-4 rounded-full soft-shadow">
+                          <CheckCircle2 className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
                        </div>
                     </motion.div>
                   )}
@@ -98,15 +98,15 @@ const SlotSelection = () => {
         <motion.div 
           initial={{ opacity: 0 }}
           animate={{ opacity: selectedSlot ? 1 : 0 }}
-          className="mt-24 text-center"
+          className="mt-16 sm:mt-24 text-center px-4"
         >
           <button 
             onClick={() => navigate('/payment')}
-            className="px-24 py-8 bg-home-maroon text-white font-black text-2xl uppercase tracking-[0.4em] rounded-full soft-shadow hover:bg-home-terracotta transition-all hover:scale-105"
+            className="w-full sm:w-auto px-12 sm:px-24 py-5 sm:py-8 bg-home-maroon text-white font-black text-lg sm:text-2xl uppercase tracking-[0.2em] sm:tracking-[0.4em] rounded-full soft-shadow hover:bg-home-terracotta transition-all hover:scale-105"
           >
             Proceed to Payment
           </button>
-          <p className="mt-8 text-xs text-home-clay font-bold tracking-[0.2em] uppercase">Secure payment via PhonePe</p>
+          <p className="mt-6 sm:mt-8 text-[10px] sm:text-xs text-home-clay font-bold tracking-[0.2em] uppercase">Secure payment via PhonePe</p>
         </motion.div>
       </div>
     </div>

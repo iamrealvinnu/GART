@@ -42,10 +42,10 @@ const Admin = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-home-sandstone flex flex-col lg:flex-row overflow-hidden">
+    <div className="min-h-screen bg-home-sandstone flex flex-col lg:flex-row lg:overflow-hidden">
       
-      {/* Admin Sidebar - Full Height, No Navbar Overlap */}
-      <aside className="w-full lg:w-80 bg-home-maroon text-white p-8 lg:h-screen flex flex-col z-30 pt-12 lg:pt-16 shadow-2xl relative">
+      {/* Admin Sidebar - Full Height on Desktop, Natural flow on Mobile */}
+      <aside className="w-full lg:w-80 bg-home-maroon text-white p-8 lg:h-screen lg:overflow-y-auto flex flex-col shrink-0 z-30 pt-12 lg:pt-16 shadow-2xl relative">
         <div className="mb-12">
            <Link to="/" className="inline-flex items-center gap-2 text-home-saffron hover:text-white transition-colors mb-4 group">
               <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
@@ -91,8 +91,8 @@ const Admin = () => {
         </div>
       </aside>
 
-      {/* Main Content Area - Scrolled independently */}
-      <main className="flex-grow p-6 sm:p-10 lg:p-16 overflow-y-auto h-screen pt-12 lg:pt-16">
+      {/* Main Content Area - Scrolled independently on desktop */}
+      <main className="flex-grow p-4 sm:p-10 lg:p-16 lg:overflow-y-auto lg:h-screen pt-12 lg:pt-16">
         <AnimatePresence mode="wait">
           {activeTab === 'dashboard' && (
             <motion.div
